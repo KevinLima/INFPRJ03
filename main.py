@@ -1,14 +1,13 @@
-import tkinter
+import gmplot
+import htmlPy
+import os
 
-root = tkinter.Tk()
+app = htmlPy.AppGUI(title=u"htmlPy Quickstart", maximized=True)
 
-# Set window title
-root.title("INFPRJ03")
+app.template_path = os.path.abspath(".")
+app.static_path = os.path.abspath(".")
 
-# Set window resolution
-root.geometry("800x600")
+app.template = ("index.html", {"username": "htmlPy_user"})
 
-# Code to add widgets will go here...
-
-root.mainloop()
+app.start()
 
