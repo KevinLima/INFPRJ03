@@ -5,3 +5,4 @@ Git project for INFPRJ03 by group 2.
 - Dave Caron
 - Kevin Lima
 - Daniel Cullimore
+- Luciano Sno
