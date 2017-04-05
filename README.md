@@ -1,8 +1,10 @@
 # INFPRJ03
 Git project for INFPRJ03 by group 2.
 ## Projectmembers
-- Pim Bazuin
+- Daniel Cullimore
 - Dave Caron
 - Kevin Lima
-- Daniel Cullimore
 - Luciano Sno
+- Osman Altun
+
+
