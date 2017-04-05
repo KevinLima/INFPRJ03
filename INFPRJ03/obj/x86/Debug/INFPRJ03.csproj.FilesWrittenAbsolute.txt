@@ -1,0 +1,6 @@
+/home/dcaron/Projects/INFPRJ03/INFPRJ03/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/dcaron/Projects/INFPRJ03/INFPRJ03/obj/x86/Debug/INFPRJ03.gtk-gui.gui.stetic
+/home/dcaron/Projects/INFPRJ03/INFPRJ03/bin/Debug/INFPRJ03.exe.mdb
+/home/dcaron/Projects/INFPRJ03/INFPRJ03/bin/Debug/INFPRJ03.exe
+/home/dcaron/Projects/INFPRJ03/INFPRJ03/obj/x86/Debug/INFPRJ03.exe
+/home/dcaron/Projects/INFPRJ03/INFPRJ03/obj/x86/Debug/INFPRJ03.exe.mdb
