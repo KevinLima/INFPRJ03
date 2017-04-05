@@ -1,8 +1,14 @@
 # INFPRJ03
 Git project for INFPRJ03 by group 2.
 ## Projectmembers
+<<<<<<< HEAD
 - Osman Altun
+=======
+- Daniel Cullimore
+>>>>>>> origin/development
 - Dave Caron
 - Kevin Lima
-- Daniel Cullimore
 - Luciano Sno
+- Osman Altun
+
+
