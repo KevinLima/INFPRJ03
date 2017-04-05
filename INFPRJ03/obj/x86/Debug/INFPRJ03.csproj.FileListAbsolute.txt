@@ -1,0 +1,2 @@
+C:\Users\AdminLu\Source\Repos\INFPRJ03\INFPRJ03\obj\x86\Debug\INFPRJ03.exe
+C:\Users\AdminLu\Source\Repos\INFPRJ03\INFPRJ03\obj\x86\Debug\INFPRJ03.csprojResolveAssemblyReference.cache

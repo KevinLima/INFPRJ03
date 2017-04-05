@@ -11,6 +11,7 @@ namespace INFPRJ03
 			MainWindow win = new MainWindow();
 			win.Show();
 			Application.Run();
+            
 		}
 	}
 }
