@@ -2,6 +2,10 @@ import gmplot
 import htmlPy
 import os
 
+from assets.modules.map import *
+
+map = Map()
+
 app = htmlPy.AppGUI(title=u"INFPRJ03", maximized=True)
 
 app.template_path = os.path.abspath(".")
