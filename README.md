@@ -17,4 +17,13 @@ apt install python3 python3-gmplot python3-jinja2 python3-pip python3-pyside
 exit
 pip3 install htmlpy
 ```
+# Guidelines Installations
+Install gmplot with pip install gmplot
+Install htmlPy with pip install htmlPy
+Install Jinja2 with pip install Jinja2
 
+Install PySide with pip install PySide 
+
+Execute the step below, if you receive the following error:Failed to find the MSVC compiler version 10.0 on your system.
+pip install --global-option="--make-spec=mingw" PySide
+ )
