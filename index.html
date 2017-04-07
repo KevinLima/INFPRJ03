@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+<iframe src="/maps.html"></iframe>
+<iframe src="http://jquery.com/" id="myFrame" width="500" marginwidth="0" height="500" marginheight="0" align="middle" scrolling="auto"></iframe>
+<button onclick="loadPages()">Click Me</button>
+<script>
+    function loadPages(){
+        var loc = "./map.html";
+        document.getElementById('myFrame').setAttribute('src', loc);
+    }
+</script>
+  </body>
+</html>
+
