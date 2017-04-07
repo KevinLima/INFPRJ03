@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-<iframe src="/maps.html"></iframe>
-<iframe src="http://jquery.com/" id="myFrame" width="500" marginwidth="0" height="500" marginheight="0" align="middle" scrolling="auto"></iframe>
-<button onclick="loadPages()">Click Me</button>
-<script>
-    function loadPages(){
-        var loc = "./map.html";
-        document.getElementById('myFrame').setAttribute('src', loc);
-    }
-</script>
-  </body>
+	<head>
+		<script>
+			function myFunction(loc) {
+				document.getElementById("map").src = loc;
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="myFunction('./assets/pages/map.html')">Load Map</button>
+		<button onclick="myFunction('./2.html')">Hello World</button>
+		<button onclick="myFunction('http://www.cnn.com')">CNN</button>
+		<button onclick="myFunction('http://kevinlima.com/')">Kevin Lima</button>
+		<iframe id="map" src="http://kevinlima.nl" width="100%" height="75%"></iframe>
+	</body>
 </html>
 
