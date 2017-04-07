@@ -2,16 +2,16 @@
 <html>
 	<head>
 		<script>
-			function myFunction(loc) {
+			function loadSource(loc) {
 				document.getElementById("map").src = loc;
 			}
 		</script>
 	</head>
-	<body>
-		<button onclick="myFunction('./assets/pages/map.html')">Load Map</button>
-		<button onclick="myFunction('./assets/pages/1.html')">1</button>
-		<button onclick="myFunction('./assets/pages/2.html')">2</button>
-		<button onclick="myFunction('./assets/pages/3.html')">3</button>
+	<body onload="loadSource('./assets/pages/intro.html')">
+		<button onclick="loadSource('./assets/pages/map.html')">Load Map</button>
+		<button onclick="loadSource('./assets/pages/1.html')">1</button>
+		<button onclick="loadSource('./assets/pages/2.html')">2</button>
+		<button onclick="loadSource('./assets/pages/3.html')">3</button>
 		<iframe id="map" src="http://kevinlima.nl" width="100%" height="500px"></iframe>
 	</body>
 </html>
