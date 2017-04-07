@@ -13,6 +13,13 @@
 		<button onclick="loadSource('./assets/pages/2.html')">2</button>
 		<button onclick="loadSource('./assets/pages/3.html')">3</button>
 		<iframe id="map" src="http://kevinlima.nl" width="100%" height="500px"></iframe>
+		<input type="range" min="2010" max="2013" value="0" step="1" onchange="showValue(this.value)" />
+		<span id="range">0</span>
+		<script type="text/javascript">
+			function showValue(newValue) {
+				document.getElementById("range").innerHTML=newValue;
+			}
+		</script>
 	</body>
 </html>
 
