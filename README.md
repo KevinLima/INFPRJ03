@@ -26,4 +26,10 @@ Install PySide with pip install PySide
 
 Execute the step below, if you receive the following error:Failed to find the MSVC compiler version 10.0 on your system.
 pip install --global-option="--make-spec=mingw" PySide
- )
+
+Install electron with the following steps
+- npm install electron --save-dev
+- npm install -g electron
+Now you can just run electron to run electron:
+electron
+)
