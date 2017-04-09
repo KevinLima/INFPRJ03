@@ -6,6 +6,8 @@
 			function loadSource(loc) {
 				document.getElementById("map").src = loc;
 			}
+			const sqlite = require('sqlite3');
+			let db = new sqlite.Database('./SQLite/INFPJ03.db');
 		</script>
 	</head>
 	<body onload="loadSource('./assets/pages/intro.html')">
