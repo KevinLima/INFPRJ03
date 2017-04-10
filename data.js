@@ -1,7 +1,9 @@
 class Data{
 	constructor(){
-		//this.getData();
-		this.getData(2012);
+		this.getData();
+
+		// The folowing line is for the street data per year.
+		//this.getData(2012);
 	}
 
 	getData(){
