@@ -15,6 +15,7 @@ class Data{
 
 		    if (!error && response.statusCode === 200) {
 		        //console.log(body) // Print the json response
+		        // TODO: Create logic that uses the data 
 		    }
 		})
 	}
