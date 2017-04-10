@@ -9,6 +9,8 @@ Git project for INFPRJ03 by group 2.
 - Osman Altun
 
 # Install
+### Node JS
+https://nodejs.org/en/download/
 ### Electron
 Download and install the latest build of Electron for your OS and add it to your project's package.json as a devDependency:
 
