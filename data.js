@@ -1,33 +1,27 @@
 class Data{
 	constructor(){
-		this.getData();
+		console.log(this.getData());
 		// The folowing line is for the street data per year.
 		//this.getData(2012);
 	}
 
-	getData(){
-		var request = require("request")
 
-		var url = "http://member.kevinlima.com/topstreet.php"
-
-		request({
-		    url: url,
-		    json: true
-		}, function (error, response, body) {
-
-		    if (!error && response.statusCode === 200) {
-		        console.log(body) // Print the json response
-		        // TODO: Create logic that uses the data 
-		    }
-		})
+	getData()
+	{
+    	var req = new XMLHttpRequest();
+    	req.open("GET", "http://member.kevinlima.com/topstreet.php", false);
+    	req.send(null);
+    	return JSON.parse(req.responseText); 
 	}
+
+
 	GetLatLong(loc)
 	//This function parses the object retrieved from google geocoding api.
 	{
-    	return GetJSON(loc).results[0].geometry.location;
+    	return GetGeocodeJSON(loc).results[0].geometry.location;
 	}
 
-	GetJSON(loc)
+	GetGeocodeJSON(loc)
 	//This function sends a request to google geocoding api.
 	{
     	var loc = loc.replace(" ", "+");
