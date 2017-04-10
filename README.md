@@ -8,6 +8,7 @@ Git project for INFPRJ03 by group 2.
 - Luciano Sno
 - Osman Altun
 
+# Install
 Download and install the latest build of Electron for your OS and add it to your project's package.json as a devDependency:
 
 ```javascript
