@@ -5,23 +5,20 @@ class Data{
 		//this.getData(2012);
 	}
 
-
 	getData()
 	{
     	var req = new XMLHttpRequest();
     	req.open("GET", "http://member.kevinlima.com/topstreet.php", false);
     	req.send(null);
-    	return JSON.parse(req.responseText); 
+    	return JSON.parse(req.responseText);
 	}
-
-
-	GetLatLong(loc)
+	getLatLong(loc)
 	//This function parses the object retrieved from google geocoding api.
 	{
-    	return GetGeocodeJSON(loc).results[0].geometry.location;
+    	return getGeocodeJSON(loc).results[0].geometry.location;
 	}
 
-	GetGeocodeJSON(loc)
+	getGeocodeJSON(loc)
 	//This function sends a request to google geocoding api.
 	{
     	var loc = loc.replace(" ", "+");
