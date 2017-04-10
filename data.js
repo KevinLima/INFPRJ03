@@ -9,7 +9,7 @@ class Data{
 	getData(){
 		var request = require("request")
 
-		var url = "http://member.kevinlima.com/change.php"
+		var url = "http://member.kevinlima.com/topstreet.php"
 
 		request({
 		    url: url,
@@ -23,7 +23,6 @@ class Data{
 		})
 	}
 	getData(year){
-		console.log(year);
 		var request = require("request")
 
 		var url = "http://member.kevinlima.com/topstreet.php?year="+year;
