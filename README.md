@@ -8,7 +8,7 @@ Git project for INFPRJ03 by group 2.
 - Luciano Sno
 - Osman Altun
 
-# Install
+# Installation
 ### Node JS
 https://nodejs.org/en/download/
 ### Electron
