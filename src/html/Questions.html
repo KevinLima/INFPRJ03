@@ -2,29 +2,51 @@
 <html>
 <head>
 <style>
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+body { font-size: 14px; width: 400px; margin: 25px auto;  }
+
+  button {
+  color:white;
+  display: block;
+  margin: 30px;
+  padding: 7px 35px;
+  font: 300 150% langdon;
+  background: #a9a9a9;
+  border: 3px solid black;
+  cursor: pointer;
+} 
+
+button:hover {
+  background: #505050;
+  border: 1px solid #8b8b8b;
 }
 
-.button2 {background-color: #e7e7e7; color: black;} /* Gray */ 
-.button3 {background-color: #e7e7e7; color: black;} /* Gray */ 
-.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+button:active {
+  background: #2e2e2e;
+  border: 1px solid black;
+  color: white;
+  }
+ 
 </style>
 </head>
-<body>
+<body bgcolor="E6E6FA">
 
-<button class="button button2">Kunnen de fietsresultaten van de dataset gevisualiseerd worden in een map van Rotterdam?</button>
-<button class="button button3">Welke fietsmerken worden het vaakst gestolen?</button>
-<button class="button button4">In welke straten worden de meeste fietsen gestolen?</button>
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Kunnen de fietsresultaten van de dataset gevisualiseerd worden in een map van Rotterdam?
+</button>
+
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Welke fietsmerken worden het vaakst gestolen?
+</button>
+
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  In welke straten worden de meeste fietsen gestolen?
+</button>
+
+<p class="big">
+If you have any questions please enter them down below!</br>
+<textarea rows="5" cols="20"></textarea></br>
+<input type="submit" value="Submit">
+</p>
 
 </body>
 </html>
