@@ -6,8 +6,6 @@ class Data{
 		this.raw_data = this.getData();
 	}
 
-	/*
-	NOTE: 2000 requests take too long, alternative solution must be found
 
 	getData()
 	//this method requests and returns data concerning bicycle thefts.
@@ -18,6 +16,8 @@ class Data{
     	return JSON.parse(req.responseText);
 	}
 	
+	/*
+	NOTE: 2000 requests take too long, alternative solution must be found
 
 	getGeocodeJSON(loc)
 	//This method sends a request to google geocoding api.
