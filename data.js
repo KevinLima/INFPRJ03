@@ -14,16 +14,17 @@ class Data{
     	req.send(null);
     	return JSON.parse(req.responseText);
 	}
+	/*
+	//NOTE: google geocoding api is not made to process +- 2000 locations (alternative solution must be found)
+	
 	getLatLong(loc)
 	//This method parses the object retrieved from google geocoding api.
-	//NOTE: google geocoding api is not made to process +- 2000 locations (alternative solution must be found)
 	{
     	return getGeocodeJSON(loc).results[0].geometry.location;
 	}
 
 	getGeocodeJSON(loc)
 	//This method sends a request to google geocoding api.
-	//NOTE: google geocoding api is not made to process +- 2000 locations (alternative solution must be found)
 	{
     	var loc = loc.replace(" ", "+");
     	var req = new XMLHttpRequest();
@@ -31,4 +32,5 @@ class Data{
     	req.send(null);
     	return JSON.parse(req.responseText); 
 	}
+	*/
 }
