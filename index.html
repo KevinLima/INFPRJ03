@@ -8,6 +8,8 @@
 		<script type="text/javascript">
 		var x = new Data();
 		</script>
+		<script src="./src/js/show_div.js"></script>
+		<script src="./src/js/hide_div.js"></script>
 	</head>
 	<body>
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
@@ -19,17 +21,18 @@
 					<a class="mdl-navigation__link" onclick="change_src('map', './src/html/mark.html')">Point Map</a>
 					<a class="mdl-navigation__link" onclick="change_src('map', './src/html/help.html')">Help</a>
 					<a class="mdl-navigation__link" onclick="change_src('map', './src/html/about.html')">About</a>
-                    <a class="mdl-navigation__link" onclick="change_src('map', './src/html/Questions.html')">Questions</a>
-					<a class="mdl-navigation__link" onclick="change_src('map', './src/html/comments.html')">Comments</a>
+					<a class="mdl-navigation__link" onclick="change_src('map', './src/html/Questions.html')">Questions</a>
 				</nav>
+				<div id="slis">
 				<p style="width: 100%;">
-					<input onmouseup="document.getElementById('range').innerHTML = this.value" class="mdl-slider mdl-js-slider" type="range" id="s1" min="2010" max="2014" value="2010" step="1" tabindex="0">
+					<input  onmouseup="document.getElementById('range').innerHTML = this.value" class="mdl-slider mdl-js-slider" type="range" id="s1" min="2010" max="2014" value="2010" step="1" tabindex="0">
 					<span id="range">2010</span>
 				</p>
+				</div>
 			</div>
 			<main class="mdl-layout__content">
 				<div class="page-content">
-					<iframe id="map" src="./src/html/map.html" style="width: 100%; height:100%;"></iframe>
+					<iframe id="content" src="./src/html/map.html" style="width: 100%; height:100%;"></iframe>
 				</div>
 			</main>
 		</div>
