@@ -1,16 +1,19 @@
 class Data{
 	constructor()
-	//The constructor initializes topstreet_data variable.
+	//The constructor initializes raw_data variable.
 	{
-		this.topstreet_data = this.getTopStreet();
+		document.write(JSON.stringify(this.getTopStreet(2012))); //test ("year" argument is not necessary)
 	}
 
-
-	getTopStreet()
-	//This method requests and returns data concerning bicycle thefts and street coordinates.
+	getTopStreet(year)
 	{
-    	var req = new XMLHttpRequest();
-    	req.open("GET", "http://member.kevinlima.com/topstreet.php", false);
+		var url = "http://member.kevinlima.com/topstreet.php";
+		if(year != undefined)
+		{
+			url = "http://member.kevinlima.com/topstreet.php?year="+year;
+		}
+		var req = new XMLHttpRequest();
+    	req.open("GET", url, false);
     	req.send(null);
     	return JSON.parse(req.responseText);
 	}
