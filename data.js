@@ -2,7 +2,21 @@ class Data{
 	constructor()
 	//The constructor initializes raw_data variable.
 	{
-		this.topstreet_data = this.getTopStreet(2012); //year argument is not necessary
+		this.topstreet_data = [this.getTopStreet(), this.getTopStreet(2011), this.getTopStreet(2012), this.getTopStreet(2013)]
+		this.location_data = this.getLocationData();	
+	}
+
+	getLocationData()
+	{
+		var result = [];
+		for (var i = 0; i < 4; i++)
+		{
+			for(var j = 0; j < this.topstreet_data[i].length; j++)
+			{
+				result.push({lat:this.topstreet_data[i][j]['Latitude'], long:this.topstreet_data[i][j]['Latitude']})
+			}
+		}
+		return result;
 	}
 
 	getTopStreet(year)

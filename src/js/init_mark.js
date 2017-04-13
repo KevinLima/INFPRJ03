@@ -175,7 +175,7 @@ function init_mark() {
         // The map() method here has nothing to do with the Google Maps API.
         var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
-            position: location,
+            position: locations,
             label: labels[i % labels.length]
           });
         });
@@ -184,6 +184,9 @@ function init_mark() {
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
+
+	  var locations = x.location_data;
+	  /*
       var locations = [
         {lat: -31.563910, lng: 147.154312},
         {lat: -33.718234, lng: 150.363181},
@@ -209,4 +212,5 @@ function init_mark() {
         {lat: -42.735258, lng: 147.438000},
         {lat: -43.999792, lng: 170.463352}
       ]
+	  */
 
