@@ -13,7 +13,10 @@ class Data{
 		{
 			for(var j = 0; j < this.topstreet_data[i].length; j++)
 			{
-				result.push({lat:this.topstreet_data[i][j]['Latitude'], long:this.topstreet_data[i][j]['Latitude']})
+				for(var k = 0; k < this.topstreet_data[i][j]["Count"]; k++)
+				{
+					result.push({lat:this.topstreet_data[i][j]['Latitude'], long:this.topstreet_data[i][j]['Latitude']})
+				}
 			}
 		}
 		return result;
