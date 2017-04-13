@@ -185,8 +185,6 @@ function init_mark() {
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
 
-	  var locations = x.location_data;
-	  /*
       var locations = [
         {lat: -31.563910, lng: 147.154312},
         {lat: -33.718234, lng: 150.363181},
@@ -212,5 +210,5 @@ function init_mark() {
         {lat: -42.735258, lng: 147.438000},
         {lat: -43.999792, lng: 170.463352}
       ]
-	  */
+
 
