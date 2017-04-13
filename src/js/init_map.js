@@ -1,5 +1,5 @@
 function init_map() {
-	// Styles a map in night mode.
+	// TODO: Make 'map' a variable
 	var map = new google.maps.Map(document.getElementById('map'), {
 		// Center point of map at initialization
 		center: {
@@ -10,6 +10,7 @@ function init_map() {
 		disableDefaultUI: true,
 		
 		zoom: 12,
+		// Google Maps theme
 		styles: [{
 			"elementType": "geometry",
 			"stylers": [{
