@@ -1,32 +1,17 @@
 class Data{
 	constructor()
+	//The constructor initializes topstreet_data variable.
 	{
-		// The folowing line is for the street data per year.
-		//this.getData(2012);
-		this.raw_data = this.getData();
+		this.topstreet_data = this.getTopStreet();
 	}
 
 
-	getData()
-	//this method requests and returns data concerning bicycle thefts.
+	getTopStreet()
+	//This method requests and returns data concerning bicycle thefts and street coordinates.
 	{
     	var req = new XMLHttpRequest();
     	req.open("GET", "http://member.kevinlima.com/topstreet.php", false);
     	req.send(null);
     	return JSON.parse(req.responseText);
 	}
-	
-	/*
-	NOTE: 2000 requests take too long, alternative solution must be found
-
-	getGeocodeJSON(loc)
-	//This method sends a request to google geocoding api.
-	{
-    	var loc = loc.replace(" ", "+");
-    	var req = new XMLHttpRequest();
-    	req.open("GET","http://nominatim.openstreetmap.org/search?q="+loc+",+rotterdam&format=json",false);
-    	req.send(null);
-    	return JSON.parse(req.responseText)[0]; 
-	}
-	*/
 }
