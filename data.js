@@ -9,7 +9,7 @@ class Data{
 	getLocationData()
 	{
 		var result = [];
-		for (var i = 0; i < 4; i++)
+		for (var i = 0; i < this.topstreet_data.length; i++)
 		{
 			for(var j = 0; j < this.topstreet_data[i].length; j++)
 			{
