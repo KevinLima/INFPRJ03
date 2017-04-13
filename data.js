@@ -2,7 +2,7 @@ class Data{
 	constructor()
 	//The constructor initializes raw_data variable.
 	{
-		document.write(JSON.stringify(this.getTopStreet(2012))); //test ("year" argument is not necessary)
+		this.topstreet_data = this.getTopStreet(2012); //year argument is not necessary
 	}
 
 	getTopStreet(year)
