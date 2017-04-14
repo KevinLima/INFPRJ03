@@ -2,12 +2,13 @@
 	<head>
 		<link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="./style.css" rel="stylesheet">
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		<script src="./src/js/change_src.js"></script>
 		<script src="./src/js/change_visibility.js"></script>
 		<script src="./src/js/update_content.js"></script>
 	</head>
-	<body> 
+	<body onload="change_visibility('loadingBar', 'hidden')">
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
 			<div class="mdl-layout__drawer">
 				<nav class="mdl-navigation">
@@ -25,7 +26,13 @@
 			</div>
 			<main class="mdl-layout__content">
 				<div class="page-content">
-					<iframe id="content" src="./src/html/map.html" style="width: 100%; height:100%;"></iframe>
+					<div id="loadingBar">
+						<div id="loadingBarPlacement">
+							<div id="loadingBarAnimation" class="mdl-progress mdl-js-progress mdl-progress__indeterminate">
+							</div>
+						</div>
+					</div>
+					<iframe id="content" src="./src/html/map.html"></iframe>
 				</div>
 			</main>
 		</div>
