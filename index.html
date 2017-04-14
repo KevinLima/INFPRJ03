@@ -10,16 +10,16 @@
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
 			<div class="mdl-layout__drawer">
 				<nav class="mdl-navigation">
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/heat.html'); change_visibility('slis', 'visible');">Heatmap</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/mark.html'); change_visibility('slis', 'visible');">Point Map</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/about.html'); change_visibility('slis', 'hidden')">About</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/questions.html'); change_visibility('slis', 'hidden')">Questions</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/heat.html'); change_visibility('yearSlider', 'visible');">Heatmap</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/mark.html'); change_visibility('yearSlider', 'visible');">Point Map</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/about.html'); change_visibility('yearSlider', 'hidden')">About</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/questions.html'); change_visibility('yearSlider', 'hidden')">Questions</a>
 				</nav>
-				<div id="slis">
-				<p style="width: 100%;">
-					<input  onmouseup="document.getElementById('range').innerHTML = this.value" class="mdl-slider mdl-js-slider" type="range" id="s1" min="2010" max="2013" value="2010" step="1" tabindex="0">
-					<span id="range">2010</span>
-				</p>
+				<div id="yearSlider">
+					<p style="width: 100%;">
+						<input onmouseup="document.getElementById('year').innerHTML = this.value" class="mdl-slider mdl-js-slider" type="range" id="s1" min="2010" max="2013" value="2010" step="1" tabindex="0">
+						<span id="year">2010</span>
+					</p>
 				</div>
 			</div>
 			<main class="mdl-layout__content">
