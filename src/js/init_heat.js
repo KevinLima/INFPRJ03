@@ -1,8 +1,9 @@
 
-var map, heatmap;
+var map, heatmap, points;
 
 function initMap() 
 {
+	initPoints();
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 13,
 		center: {lat:  51.9244201, lng: 4.4777325},
@@ -57,17 +58,25 @@ function changeOpacity()
 {
 	heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
 }
-
-var points;
-var interval = setInterval(()=>{
-	if (dc.location_data !== undefined)
-	{
-		var lst = []
-		for (var i = 0; i < dc.location_data.length; i++)
+function initPoints()
+{
+	var interval = setInterval(()=>{
+		if (dc.location_data !== undefined)
 		{
-		lst.push(new google.maps.LatLng(dc.location_data[i].lat, dc.location_data[i].lng))
+			var lst = []
+			for (var i = 0; i < dc.location_data.length; i++)
+			{
+			lst.push(new google.maps.LatLng(dc.location_data[i].lat, dc.location_data[i].lng))
+			}
+			points = lst;
+			clearInterval(interval);
 		}
-		points = lst;
-		clearInterval(interval);
-	}
-}, 100);
+	}, 100);
+}
+
+function reload(year)
+{
+	points = undefined;
+	year !== undefined ? dc.initLocationData(year) : dc.initLocationData()
+	initMap();
+}

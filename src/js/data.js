@@ -11,18 +11,26 @@ class Data
 		this.initLocationData();
 	}
 
-	initLocationData()
+	initLocationData(year)
 	// creates a list of coordinates and returns the list
 	{
+		var index = 0;
+		if (year !== undefined)
+		{
+			if (year <= 2013 && year >= 2011)
+			{
+				index = 2014 - year;
+			}
+		}
 		var interval = setInterval(()=>{
-			if(this.topstreet_data[0] !== undefined)
+			if(this.topstreet_data[index] !== undefined)
 			{
 				var result = [];
-				for(var j = 0; j < this.topstreet_data[0].length; j++)
+				for(var j = 0; j < this.topstreet_data[index].length; j++)
 				{
-					for(var k = 0; k < this.topstreet_data[0][j]["Count"]; k++)
+					for(var k = 0; k < this.topstreet_data[index][j]["Count"]; k++)
 					{
-						result.push({lat:parseFloat(this.topstreet_data[0][j]['Latitude']), lng:parseFloat(this.topstreet_data[0][j]['Longitude'])});
+						result.push({lat:parseFloat(this.topstreet_data[index][j]['Latitude']), lng:parseFloat(this.topstreet_data[index][j]['Longitude'])});
 					}
 				}
 				this.location_data = result;

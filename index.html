@@ -16,12 +16,11 @@
       <span class="mdl-layout-title">INFPRJ03</span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav id="years" class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Total</a>
-        <a class="mdl-navigation__link" href="">2011</a>
-        <a class="mdl-navigation__link" href="">2012</a>
-        <a class="mdl-navigation__link" href="">2013</a>
+      <nav style="visibility:hidden" id="years" class="mdl-navigation">
+        <a class="mdl-navigation__link" onclick="document.getElementById('content').contentWindow.reload()">Total</a>
+        <a class="mdl-navigation__link" onclick="document.getElementById('content').contentWindow.reload(2011)">2011</a>
+        <a class="mdl-navigation__link" onclick="document.getElementById('content').contentWindow.reload(2012)">2012</a>
+        <a class="mdl-navigation__link" onclick="document.getElementById('content').contentWindow.reload(2013)">2013</a>
       </nav>
     </div>
   </header>

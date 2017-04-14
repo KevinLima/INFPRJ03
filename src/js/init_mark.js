@@ -1,5 +1,7 @@
+var locations;
 function init_mark() {
 	// TODO: Make 'map' a variable
+	initLocation();
 	var map = new google.maps.Map(document.getElementById('map'), {
 		// Center point of map at initialization
 		center: {
@@ -185,10 +187,22 @@ function init_mark() {
 
       }
 	  var locations;
-	  var interval = setInterval(()=>{
-		  if(dc.location_data !== undefined)
-		  {
-			  locations = dc.location_data;
-			  clearInterval(interval);
-		  }
-	  }, 100);
+
+function initLocation()
+{
+	var interval = setInterval(()=>{
+	if(dc.location_data !== undefined)
+	{
+		locations = dc.location_data;
+		clearInterval(interval);
+	}
+	}, 100);
+}
+
+
+function reload(year)
+{
+	locations = undefined;
+	year !== undefined ? dc.initLocationData(year) : dc.initLocationData()
+	init_mark();
+}
