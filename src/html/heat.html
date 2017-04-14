@@ -59,10 +59,16 @@
           mapTypeId: 'satellite'
         });
 
-        heatmap = new google.maps.visualization.HeatmapLayer({
-          data: getPoints(),
-          map: map
-        });
+        var interval2 = setInterval(()=>{
+          if(points !== undefined)
+          {
+            heatmap = new google.maps.visualization.HeatmapLayer({
+              data: points,
+              map: map
+            });
+            clearInterval(interval2);
+          }
+        }, 100)
       }
 
       function toggleHeatmap() {
@@ -97,19 +103,19 @@
         heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
       }
 
-      // Heatmap data
-      function getPoints() {
-        var lst = [];
-        if(window.x === undefined)
+      var points;
+      var interval = setInterval(()=>{
+        if (dc.location_data !== undefined)
         {
-          window.x = new Data()
+          var lst = []
+          for (var i = 0; i < dc.location_data.length; i++)
+          {
+            lst.push(new google.maps.LatLng(dc.location_data[i].lat, dc.location_data[i].lng))
+          }
+          points = lst;
+          clearInterval(interval);
         }
-        for (var i = 0; i < window.x.location_data.length; i++)
-        {
-          lst.push(new google.maps.LatLng(window.x.location_data[i].lat, window.x.location_data[i].lng))
-        }
-        return lst;
-      }
+      }, 100)
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAScKdVWqG-IWed2LPLkVDMxo_1cWjUny0&libraries=visualization&callback=initMap">
