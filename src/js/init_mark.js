@@ -1,5 +1,7 @@
+var locations;
 function init_mark() {
 	// TODO: Make 'map' a variable
+	initLocation();
 	var map = new google.maps.Map(document.getElementById('map'), {
 		// Center point of map at initialization
 		center: {
@@ -166,27 +168,41 @@ function init_mark() {
 			}]
 		}]
 	});
-// Create an array of alphabetical characters used to label the markers.
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	
+	var interval = setInterval(()=>{
+		if(locations !== undefined)
+		{
+			var markers = locations.map(function(location, i) {
+			return new google.maps.Marker({
+				position: location,
+				label: "1"
+				});
+			});
+			// Add a marker clusterer to manage the markers.
+			var markerCluster = new MarkerClusterer(map, markers,
+				{imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+			clearInterval(interval);
+		}
+	}, 100);
 
-        // Add some markers to the map.
-        // Note: The code uses the JavaScript Array.prototype.map() method to
-        // create an array of markers based on a given "locations" array.
-        // The map() method here has nothing to do with the Google Maps API.
-        var markers = locations.map(function(location, i) {
-          return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length]
-          });
-        });
-
-        // Add a marker clusterer to manage the markers.
-        var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
+	  var locations;
 
-	  if(window.x === undefined)
-	  {
-	  	window.x = new Data();
-	  	var locations = x.location_data;
-	  }
+function initLocation()
+{
+	var interval = setInterval(()=>{
+	if(dc.location_data !== undefined)
+	{
+		locations = dc.location_data;
+		clearInterval(interval);
+	}
+	}, 100);
+}
+
+
+function reload(year)
+{
+	locations = undefined;
+	year !== undefined ? dc.initLocationData(year) : dc.initLocationData()
+	init_mark();
+}
