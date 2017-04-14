@@ -3,11 +3,13 @@
 	<head>
 		<link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<script src="./src/js/change_src.js"></script>
+		<link href="./style.css" rel="stylesheet">
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-		<script src="./src/js/show_div.js"></script>
-		<script src="./src/js/hide_div.js"></script>
+		<script src="./src/js/change_src.js"></script>
+		<script src="./src/js/change_visibility.js"></script>
+		<script src="./src/js/update_content.js"></script>
 	</head>
+
 	<body> 
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
@@ -25,12 +27,11 @@
     </div>
   </header>
 			<div class="mdl-layout__drawer">
-				<span class="mdl-layout-title">INFPRJ03</span>
 				<nav class="mdl-navigation">
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/heat.html'); show_div('years');">Heatmap</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/mark.html'); show_div('years');">Point Map</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/about.html'); hide_div('years');">About</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/questions.html'); hide_div('years');">Questions</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/heat.html'); change_visibility('years', 'visible');">Heatmap</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/mark.html'); change_visibility('years', 'visible');">Point Map</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/about.html'); change_visibility('years', 'hidden');">About</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/questions.html'); change_visibility('years', 'hidden');">Questions</a>
 				</nav>
 			</div>
 			<main class="mdl-layout__content">
