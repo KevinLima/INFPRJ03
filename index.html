@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 	<head>
 		<link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
@@ -8,25 +9,34 @@
 		<script src="./src/js/hide_div.js"></script>
 	</head>
 	<body> 
-		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">INFPRJ03</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav id="years" class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Total</a>
+        <a class="mdl-navigation__link" href="">2011</a>
+        <a class="mdl-navigation__link" href="">2012</a>
+        <a class="mdl-navigation__link" href="">2013</a>
+      </nav>
+    </div>
+  </header>
 			<div class="mdl-layout__drawer">
 				<span class="mdl-layout-title">INFPRJ03</span>
 				<nav class="mdl-navigation">
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/heat.html'); show_div('slis');">Heatmap</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/mark.html'); show_div('slis');">Point Map</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/about.html'); hide_div('slis')">About</a>
-					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/questions.html'); hide_div('slis')">Questions</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/heat.html'); show_div('years');">Heatmap</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/mark.html'); show_div('years');">Point Map</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/about.html'); hide_div('years');">About</a>
+					<a class="mdl-navigation__link" onclick="change_src('content', './src/html/questions.html'); hide_div('years');">Questions</a>
 				</nav>
-				<div id="slis">
-				<p style="width: 100%;">
-					<input  onmouseup="document.getElementById('range').innerHTML = this.value" class="mdl-slider mdl-js-slider" type="range" id="s1" min="2011" max="2013" value="2011" step="1" tabindex="0">
-					<span id="range">2011</span>
-				</p>
-				</div>
 			</div>
 			<main class="mdl-layout__content">
 				<div class="page-content">
-					<iframe id="content" src="./src/html/map.html" style="width: 100%; height:100%;"></iframe>
+					<iframe id="content" src="./src/html/map.html" style="width: 100vw; height:100vw;"></iframe>
 				</div>
 			</main>
 		</div>
