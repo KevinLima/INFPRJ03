@@ -7,7 +7,9 @@ class Data
 		//this.topstreet_data = [this.getTopStreet(), this.getTopStreet(2011), this.getTopStreet(2012), this.getTopStreet(2013)];
 		//this.location_data = this.getLocationData();
 		this.topstreet_data = [];
+		this.topbike_data = [];
 		this.initTopStreetData();
+		this.initTopBikeData();
 		this.initLocationData();
 	}
 
@@ -61,6 +63,31 @@ class Data
 			}).then((json)=>{
 				this.topstreet_data.push(json);
 			}).then(()=>{this.initTopStreetData(year+1);});
+		}
+	}
+
+	initTopBikeData(year)
+	{
+		var url = "http://member.kevinlima.com/topbike.php";
+		if(year !== undefined)
+		{
+			url = "http://member.kevinlima.com/topbike.php?year="+year;
+		}
+		if(year === undefined)
+		{
+			fetch(url, {method:"GET"}).then((response)=>{
+				return response.json();
+			}).then((json)=>{
+				this.topbike_data.push(json);
+			}).then(()=>{this.initTopBikeData(2011)})
+		}
+		else if (year <= 2013 && year >= 2011)
+		{
+			fetch(url, {method:"GET"}).then((response)=>{
+				return response.json();
+			}).then((json)=>{
+				this.topbike_data.push(json);
+			}).then(()=>{this.initTopBikeData(year+1);});
 		}
 	}
 }
