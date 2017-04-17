@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
+		<script src="../js/init_map.js"></script>
+		<script src="../js/change_visibility.js"></script>
+		<style>		
 			/* Always set the map height explicitly to define the size of the div
 			* element that contains the map. */
-			#map {
-				height: 100%;
-			}
 
 			/* Optional: Makes the sample page fill the window. */
+			#map{
+				min-height:100%;
+				min-width:100%;
+				visibility: hidden;
+			}
+
 			html, body {
 				height: 100%;
+				width: 100%;
 				margin: 0;
 				padding: 0;
 			}
 		</style>
-		<script src="../js/init_map.js"></script>
-		<script id="poenie" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAScKdVWqG-IWed2LPLkVDMxo_1cWjUny0&callback=init_map"></script>
 	</head>
-	<body>
+	<body onload="change_visibility('map', 'visible')">
 		<div id="map"></div>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAScKdVWqG-IWed2LPLkVDMxo_1cWjUny0&callback=init_map"></script>
 	</body>
 </html>
