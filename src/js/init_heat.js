@@ -77,6 +77,7 @@ function initPoints()
 function reload(year)
 {
 	points = undefined;
+	dc.location_data = undefined;
 	year !== undefined ? dc.initLocationData(year) : dc.initLocationData()
 	initMap();
 }

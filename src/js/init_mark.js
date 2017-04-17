@@ -203,6 +203,7 @@ function initLocation()
 function reload(year)
 {
 	locations = undefined;
+	dc.location_data = undefined;
 	year !== undefined ? dc.initLocationData(year) : dc.initLocationData()
 	init_mark();
 }
