@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../js/change_visibility.js"></script>
+        <script>var dc = parent.dc;</script>
+        <script>var pagenum=1; var yearIndex = 0;</script>
+        <meta charset="utf-8">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+        html, body {
+        height: 100%;
+        overflow:hidden;
+        margin: 0;
+        padding: 0;
+        background-color:lawngreen;
+        }
+        </style>
+        <script>
+        var interval = setInterval(()=>{
+            if(dc.topbike_data[3] !== undefined)
+            {
+                change_visibility("probar", "hidden");
+                clearInterval(interval);
+            }
+        }, 100)
+
+        function next()
+        {
+            if(pagenum <= Math.floor(dc.topbike_data[yearIndex].length/10))
+            {
+                pagenum += 1;
+                loadData();
+            }
+        }
+        function previous()
+        {
+            if(pagenum > 1)
+            {
+                pagenum -= 1;
+                loadData();
+            }
+        }
+        function loadData()
+        {
+            var interval = setInterval(()=>{
+                if(dc.topbike_data[yearIndex] !== undefined)
+                {
+                    var id = 0;
+                    for (var i = pagenum*10-9; i <= pagenum*10; i++)
+                    {
+                        if(dc.topbike_data[yearIndex][i-1] !== undefined)
+                        {
+                            document.getElementById("rank"+(id)).innerHTML = i;
+                            document.getElementById("brand"+(id)).innerHTML = dc.topbike_data[yearIndex][i-1]["Merk"];
+                            document.getElementById("amount"+(id)).innerHTML = dc.topbike_data[yearIndex][i-1]["Count"];
+                            id += 1;
+                        }
+                        else
+                        {
+                            document.getElementById("rank"+(id)).innerHTML = "";
+                            document.getElementById("brand"+(id)).innerHTML = "";
+                            document.getElementById("amount"+(id)).innerHTML = "";
+                            id += 1;
+                        }
+                    }
+                    clearInterval(interval);
+                }
+            }, 100)
+        }
+        </script>
+        <title>Bike Hiscore</title>
+  </head>
+    <body>
+        <div id="probar" style="width:100%;" id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+        <div style="width:100%; height:100%; background-color:white;">
+                <button onclick="previous();" style="top:70%; left:20%; position:fixed" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                    <i class="material-icons">navigate_before</i>
+                </button>
+                <button onclick="next();" style="top:70%; right:20%; float:right; position:fixed;" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                    <i class="material-icons">navigate_next</i>
+                </button>
+            <div style="position:fixed; left:50%; transform:translate(-50%, 0); margin-top:25px;">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                        <th>Rank</th>
+                        <th class="mdl-data-table__cell--non-numeric">Brand</th>
+                        <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="rank0"></th>
+                            <td id="brand0" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount0"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank1"></th>
+                            <td id="brand1" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount1"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank2"></th>
+                            <td id="brand2" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount2"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank3"></th>
+                            <td id="brand3" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount3"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank4"></th>
+                            <td id="brand4" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount4"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank5"></th>
+                            <td id="brand5" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount5"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank6"></th>
+                            <td id="brand6" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount6"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank7"></th>
+                            <td id="brand7" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount7"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank8"></th>
+                            <td id="brand8" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount8"></td>
+                        </tr>
+                        <tr>
+                            <th id="rank9"></th>
+                            <td id="brand9" class="mdl-data-table__cell--non-numeric"></td>
+                            <td id="amount9"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            function reload(year)
+            {
+                index = 0;
+                pagenum = 1;
+                if(year !== undefined) {index = 2014 - year;}
+                yearIndex = index;
+                loadData();
+            }
+            loadData();
+        </script>
+    </body>
+    <footer>
+    </footer>
+</html>
