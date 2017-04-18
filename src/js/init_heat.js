@@ -1,18 +1,14 @@
-
 var map, heatmap, points;
 
-function initMap() 
-{
+function initMap() {
 	initPoints();
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 13,
-		center: {lat:  51.9244201, lng: 4.4777325},
-		mapTypeId: 'satellite'
+		center: {lat:  51.9244201, lng: 4.4777325}
 	});
 
 	var interval2 = setInterval(()=>{
-		if(points !== undefined)
-		{
+		if(points !== undefined) {
 		heatmap = new google.maps.visualization.HeatmapLayer({
 			data: points,
 			map: map
@@ -22,14 +18,12 @@ function initMap()
 	}, 100)
 }
 
-function toggleHeatmap() 
-{
+function toggleHeatmap() {
 	heatmap.setMap(heatmap.getMap() ? null : map);
 }
 
-function changeGradient() 
-{
-var gradient = 
+function changeGradient() {
+var gradient =
 		[
 		'rgba(0, 255, 255, 0)',
 		'rgba(0, 255, 255, 1)',
@@ -49,17 +43,15 @@ var gradient =
 	heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
 }
 
-function changeRadius() 
-{
+function changeRadius() {
 	heatmap.set('radius', heatmap.get('radius') ? null : 20);
 }
 
-function changeOpacity() 
-{
+function changeOpacity() {
 	heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
 }
-function initPoints()
-{
+
+function initPoints() {
 	var interval = setInterval(()=>{
 		if (dc.location_data !== undefined)
 		{
@@ -74,8 +66,7 @@ function initPoints()
 	}, 100);
 }
 
-function reload(year)
-{
+function reload(year) {
 	points = undefined;
 	dc.location_data = undefined;
 	year !== undefined ? dc.initLocationData(year) : dc.initLocationData()
