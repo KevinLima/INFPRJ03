@@ -43,9 +43,11 @@ class Data
 
 	initTopStreetData(year)
 	{
+		// URL to API data 
 		var url = "http://member.kevinlima.com/topstreet.php";
 		if(year !== undefined)
 		{
+			// URL to API data with a specific year
 			url = "http://member.kevinlima.com/topstreet.php?year="+year;
 		}
 		if(year === undefined)
