@@ -3,6 +3,7 @@ var map, heatmap, points;
 
 function initMap() 
 {
+	points = new google.maps.MVCArray([]);
 	initPoints();
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 13,
@@ -10,16 +11,11 @@ function initMap()
 		mapTypeId: 'satellite'
 	});
 
-	var interval2 = setInterval(()=>{
-		if(points !== undefined)
-		{
 		heatmap = new google.maps.visualization.HeatmapLayer({
 			data: points,
 			map: map
 		});
-		clearInterval(interval2);
-		}
-	}, 100)
+
 }
 
 function toggleHeatmap() 
@@ -63,12 +59,10 @@ function initPoints()
 	var interval = setInterval(()=>{
 		if (dc.location_data !== undefined)
 		{
-			var lst = []
 			for (var i = 0; i < dc.location_data.length; i++)
 			{
-			lst.push(new google.maps.LatLng(dc.location_data[i].lat, dc.location_data[i].lng))
+				points.push(new google.maps.LatLng(dc.location_data[i].lat, dc.location_data[i].lng));
 			}
-			points = lst;
 			clearInterval(interval);
 		}
 	}, 100);
