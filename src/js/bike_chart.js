@@ -7,7 +7,6 @@ var options = {
     width: 600,
     height: 400,
     bar: {groupWidth: "95%"},
-    legend: { position: "none" },
     vAxis: {minValue: 0},
     animation:{"startup":true,"duration":1000, "easing":"out"}
 };
