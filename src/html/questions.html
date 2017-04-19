@@ -2,16 +2,17 @@
 <head>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-indigo.min.css" />
+<link href="
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-</head>
+<script src="../js/change_src.js"></script>
 <body>
-
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="myFunction1()">Kunnen de fietsresultaten van de dataset gevisualiseerd worden in een map van Rotterdam?</button>
-
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="myFunction2()">Welke fietsmerken worden het vaakst gestolen?</button>
-
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="myFunction3()">In welke straten worden de meeste fietsen gestolen?</button>
-
+<div class="mdl-grid" style="width: 75%; margin: auto;">
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:100%;"onclick="myFunction1()">Can the bike results of the datasets be visualized in a map of Rotterdam?</button>
+</div>
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:100%;" onclick="myFunction2()">Which bike brands are stolen most often?</button>
+</div>
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-phone"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:100%;" onclick="myFunction3()">In which streets does the most bikes get stolen?</button>
+</div>
 <script>
 function myFunction1() {
 	alert("Zie Heatmap en PointMap");
@@ -23,5 +24,7 @@ function myFunction3() {
 	alert("Zie Highscore - Streets");
 }
 </script>
+</head>
 </body>
 </html>
+
