@@ -39,7 +39,7 @@ class Data
 	}
 
 	initTopStreetData(year)
-	//Requests top street data from the database and creates a list using recurstion.
+	//Requests top street data from the database and creates a list using recursion.
 	{
 		var url = "http://member.kevinlima.com/topstreet.php";
 		if(year !== undefined)
