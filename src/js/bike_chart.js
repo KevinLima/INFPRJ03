@@ -3,7 +3,7 @@ var yearIndex = 0;
 var status = false; 
 var data = [["Brand", "Amount"]];
 var options = {
-    title: "HighScore - Top Stolen Brands",
+    title: "HighScore - Brands",
     width: 600,
     height: 400,
     bar: {groupWidth: "95%"},
@@ -39,11 +39,11 @@ function previous()
 function drawchart()
 {
     var data = google.visualization.arrayToDataTable([["Brand", "Amount"],
-    [dc.topbike_data[yearIndex][pagenum*5-5]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-5]["Count"])],
-    [dc.topbike_data[yearIndex][pagenum*5-4]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-4]["Count"])],
-    [dc.topbike_data[yearIndex][pagenum*5-3]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-3]["Count"])],
-    [dc.topbike_data[yearIndex][pagenum*5-2]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-2]["Count"])],
-    [dc.topbike_data[yearIndex][pagenum*5-1]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-1]["Count"])]]);
+    [pagenum*5-4+". "+dc.topbike_data[yearIndex][pagenum*5-5]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-5]["Count"])],
+    [pagenum*5-3+". "+dc.topbike_data[yearIndex][pagenum*5-4]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-4]["Count"])],
+    [pagenum*5-2+". "+dc.topbike_data[yearIndex][pagenum*5-3]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-3]["Count"])],
+    [pagenum*5-1+". "+dc.topbike_data[yearIndex][pagenum*5-2]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-2]["Count"])],
+    [pagenum*5+". "+dc.topbike_data[yearIndex][pagenum*5-1]["Merk"], parseInt(dc.topbike_data[yearIndex][pagenum*5-1]["Count"])]]);
     var materialChart = new google.visualization.BarChart(document.getElementById('chart_div'));
     materialChart.draw(data, options);
 }

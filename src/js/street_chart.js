@@ -3,7 +3,7 @@ var yearIndex = 0;
 var status = false; 
 var data = [["Street", "Amount"]];
 var options = {
-    title: "HighScore - Top Stolen Brands",
+    title: "HighScore - Streets",
     width: 600,
     height: 400,
     bar: {groupWidth: "95%"},
@@ -39,11 +39,11 @@ function previous()
 function drawchart()
 {
     var data = google.visualization.arrayToDataTable([["Brand", "Amount"],
-    [dc.topstreet_data[yearIndex][pagenum*5-5]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-5]["Count"])],
-    [dc.topstreet_data[yearIndex][pagenum*5-4]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-4]["Count"])],
-    [dc.topstreet_data[yearIndex][pagenum*5-3]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-3]["Count"])],
-    [dc.topstreet_data[yearIndex][pagenum*5-2]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-2]["Count"])],
-    [dc.topstreet_data[yearIndex][pagenum*5-1]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-1]["Count"])]]);
+    [pagenum*5-4+". "+dc.topstreet_data[yearIndex][pagenum*5-5]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-5]["Count"])],
+    [pagenum*5-3+". "+dc.topstreet_data[yearIndex][pagenum*5-4]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-4]["Count"])],
+    [pagenum*5-2+". "+dc.topstreet_data[yearIndex][pagenum*5-3]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-3]["Count"])],
+    [pagenum*5-1+". "+dc.topstreet_data[yearIndex][pagenum*5-2]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-2]["Count"])],
+    [pagenum*5+". "+dc.topstreet_data[yearIndex][pagenum*5-1]["Straat"], parseInt(dc.topstreet_data[yearIndex][pagenum*5-1]["Count"])]]);
     var materialChart = new google.visualization.BarChart(document.getElementById('chart_div'));
     materialChart.draw(data, options);
 }
