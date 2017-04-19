@@ -1,11 +1,8 @@
 class Data
 {
-	//TODO: implement topbikes_data
-
 	constructor()
+	//Initializes data class.
 	{
-		//this.topstreet_data = [this.getTopStreet(), this.getTopStreet(2011), this.getTopStreet(2012), this.getTopStreet(2013)];
-		//this.location_data = this.getLocationData();
 		this.topstreet_data = [];
 		this.topbike_data = [];
 		this.initTopStreetData();
@@ -42,6 +39,7 @@ class Data
 	}
 
 	initTopStreetData(year)
+	//Requests top street data from the database and creates a list using recurstion.
 	{
 		var url = "http://member.kevinlima.com/topstreet.php";
 		if(year !== undefined)
@@ -67,6 +65,7 @@ class Data
 	}
 
 	initTopBikeData(year)
+	//Requests top bike brand data from the database and creates a list using recursion.
 	{
 		var url = "http://member.kevinlima.com/topbike.php";
 		if(year !== undefined)
