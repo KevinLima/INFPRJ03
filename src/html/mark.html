@@ -22,7 +22,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 95%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -30,7 +30,8 @@
         overflow:hidden;
         margin: 0;
         padding: 0;
-        background-color:lawngreen;
+		background-color: #1A237E
+		
       }
     </style>
   </head>
@@ -44,5 +45,40 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAScKdVWqG-IWed2LPLkVDMxo_1cWjUny0&callback=init_mark">
     </script>
+	
+	<div style= "border-top: thick double #9C27B0">
+					<table style="width: 100%">
+					<tr>
+						<td bgcolor= "#B3E5FC" style="width: 10%">
+							</td>
+						<td>
+						<font color="white"> < 10</font>
+							</td>
+						<td bgcolor= "#FFFF00" style="width: 10%">
+							</td>
+						<td>
+						<font color="white"> 10 - 99</font>
+						
+						<td bgcolor= "#F44336" style="width: 10%">
+							</td>
+						<td>
+						<font color="white"> 100 - 999</font>
+							</td>
+						
+						<td bgcolor= "#E91E63" style="width: 10%">
+							</td>
+						<td>
+						<font color="white"> 1000 - 9999</font>
+							</td>
+						
+						<td bgcolor= "#9C27B0" style="width: 10%">
+							</td>
+						<td>
+						<font color="white"> > 10000</font>
+							</td>
+						</tr>	
+						</td>
+					</table>
+				</div>
   </body>
 </html>
